@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="MOVE IT - Šokių studija Vilniuje, siūlanti profesionalius šokių užsiėmimus įvairiuose stiliuose.">
+    <meta name="keywords" content="šokiai, Vilnius, šokių studija, hip-hop, salsa, jazz, vogue, šokių užsiėmimai">
+    <meta name="author" content="MOVE IT">
+    <title>MOVE IT</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f3f0fa;
+            color: #3a2b6a;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(58, 43, 106, 0.2);
+        }
+
+        select {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            background-color: #ece7f7;
+            color: #3a2b6a;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #6a4dc2;
+        }
+
+        a {
+            color: #6a4dc2;
+            font-weight: bold;
+        }
+
+        img {
+            border-radius: 10px;
+            margin: 10px 0;
+            max-width: 100%;
+        }
+
+        video {
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        blockquote {
+            background-color: #f0ecfa;
+            border-left: 5px solid #a68ef0;
+            padding: 10px 20px;
+            margin: 10px 0;
+            border-radius: 8px;
+            font-style: italic;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <img src="https://files.axshare.com/gsc/JRFFS1/cd/73/e3/cd73e340df43415abdae4e0bdf42ae86/images/pagrindinis_puslapis/u6.png?pageId=0d1c6a1c-dd1a-4a2d-80c2-595b969ef0c6"
+                alt="Logo" class="logo" width="70" height="70">
+            <h1>ŠOKIŲ STUDIJA MOVE IT</h1>
+        </div>
+        <nav> <!-- navigacija -->
+            <hr>
+            <ul>
+                <a href="index.html">Pagrindinis</a>
+                <a href="trainers.html">Šokių treneriai</a>
+                <a href="gallery.html">Galerija</a>
+                <a href="contacts.html">Kontaktai</a>
+                <a href="registration.html">Registracija</a>
+                <a href="newevents.html">Naujausi renginiai</a>
+                <a href="#profile">Pasirinkti profilį</a>
+            </ul>
+        </nav>
+    </header>
+
+    <body>
+        <div class="container">
+            <label for="profile"><strong>Pasirinkite savo profilį:</strong></label>
+            <select id="profile" onchange="setProfile()">
+                <option value="vaikas">Vaikas</option>
+                <option value="paauglys">Paauglys</option>
+                <option value="suauges">Suaugęs</option>
+            </select>
+
+            <div id="content"></div>
+        </div>
+
+        <script>
+            function setProfile() {
+                const profile = document.getElementById('profile').value;
+                document.cookie = "profile=" + profile + "; path=/";
+                showContent(profile);
+            }
+
+            function getCookie(name) {
+                let value = "; " + document.cookie;
+                let parts = value.split("; " + name + "=");
+                if (parts.length == 2) return parts.pop().split(";").shift();
+            }
+
+            function showContent(profile) {
+                const contentDiv = document.getElementById('content');
+
+                if (profile === 'vaikas') {
+                    contentDiv.innerHTML = `
+                    <h2>Labas vaikams! 🧒</h2>
+                    <p>Pažiūrėk mūsų šaunų video, kaip atrodo šokiai mūsų studijoje!</p>
+                    <video width="100%" height="auto" controls>
+                <source src="sokiai.mp4" type="video/mp4">
+            </video>
+                `;
+                } else if (profile === 'paauglys') {
+                    contentDiv.innerHTML = `
+                    <h2>Hey, paaugliai! 🕺</h2>
+                    <p>Ieškai stilingų ir dinamiškų šokių? Pas mus rasi viską!</p>
+                    <h3>Populiariausi stiliai:</h3>
+                    <ul>
+                        <li><strong>Hip-Hop</strong> – energija ir laisvė! <br><img src="https://npr.brightspotcdn.com/dims4/default/e637331/2147483647/strip/true/crop/4096x2304+0+214/resize/1200x675!/quality/90/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F47%2Fae%2F16acee474c01a067e87f2a8d6c59%2Frennieharris.jpg"
+                            alt="HIP-HOP Dance" width="350" height="200"></li>
+                        <li><strong>Vogue</strong> – išraiška ir stilius! <br><img src="https://cdn.shopify.com/s/files/1/1313/8515/files/Vogue_Dance_-_Cultural_Dance_Spotlight-_dancers.jpg?v=1531163708"
+                            alt="VOGUE Dance" width="350" height="200"></li>
+                    </ul>
+                    <h3>Ką sako mūsų mokiniai?</h3>
+                    <blockquote>„Tai buvo geriausias sprendimas – čia radau draugų ir išmokau šokti kaip TikTok'e!“ – Emilija, 15 m.</blockquote>
+                    <blockquote>„Atmosfera nereali, treneriai draugiški – einu jau 2 metus.“ – Lukas, 17 m.</blockquote>
+                    <p><a href="registration.html">👉 Užsiregistruok dabar!</a></p>
+                `;
+                } else if (profile === 'suauges') {
+                    contentDiv.innerHTML = `
+                    <h2>Sveiki suaugusieji! 👨‍🦰</h2>
+                    <p>Šokiai – ne tik pramoga, bet ir sveikatos investicija:</p>
+                    <ul>
+                        <li>⚡ Gerina fizinę formą ir lankstumą</li>
+                        <li>🧠 Padeda atsipalaiduoti ir mažina stresą</li>
+                        <li>❤️ Stiprina širdies veiklą ir ištvermę</li>
+                        <li>👫 Puikus būdas susipažinti su naujais žmonėmis</li>
+                        <img src="https://travellinkslive.com/wp-content/uploads/2020/05/International-Dance-Day-min.jpg"
+                            alt="JAZZ Dance" width="350" height="200">
+                    </ul>
+                    <h3>Vakarinių treniruočių grafikas:</h3>
+                    <ul>
+                        <li>Pirmadieniais – Salsa pradedantiesiems (18:30 – 19:30)</li>
+                        <li>Trečiadieniais – Jazz suaugusiems (19:00 – 20:00)</li>
+                        <li>Penktadieniais – Latino mix (18:00 – 19:00)</li>
+                        <img src="https://cdn.shopify.com/s/files/1/1313/8515/files/Vogue_Dance_-_Cultural_Dance_Spotlight-_dancers.jpg?v=1531163708"
+                            alt="VOGUE Dance" width="350" height="200">
+                    </ul>
+                    <p>Užsukite po darbo, atsipalaiduokite ir atraskite šokio džiaugsmą! 💃</p>
+                    <p><a href="registration.html">👉 Užsiregistruok dabar!</a></p>
+                `;
+                }
+            }
+
+            window.onload = function () {
+                const savedProfile = getCookie('profile');
+                if (savedProfile) {
+                    document.getElementById('profile').value = savedProfile;
+                    showContent(savedProfile);
+                }
+            };
+        </script>
+    </body>
+
+</html>

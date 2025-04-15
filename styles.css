@@ -1,0 +1,783 @@
+/* Nustatomas pagrindinis sriftas, spalva */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+h1,
+h3,
+h4 {
+    color: inherit;
+    /* Šie elementai paveldi spalvą iš parent, nes `color` nustatytas `body` */
+}
+
+/* Puslapio viršutinė dalis (header) gauna fono spalvą (#5f4c79) ir baltą tekstą. 
+   Viršui ir apačiai pridedama 10px erdvė, tekstas centruojamas. */
+header {
+    background-color: #5f4c79;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Viršutinės dalies konteineris nustatomas kaip lankstus konteineris (flexbox), 
+   o jo turinys išlygiuojamas vertikaliai į centrą. Taip pat pridedama "relative" pozicionavimo savybė, 
+   jei vėliau reikės vidinių elementų pozicionavimo. */
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Logotipas stumiamas į kairę, užimant likusį plotą dešinėje ("auto" nustato automatinį tarpą dešinėje). */
+.logo {
+    margin-right: auto;
+}
+
+/* Šokio stiliaus sekcija naudojama "flexbox" išdėstymui. Elementai vertikaliai centruojami, 
+   o tarp sekcijos ir kitos dalies paliekamas 20px tarpas. */
+.dance-style {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Šokių stiliaus lentelė */
+.dance-styles-table img {
+    width: 100%;
+    /* Uzima visa ploti */
+    height: auto;
+    border-radius: 8px;
+    /* Apvalinti kampai */
+    margin-bottom: 10px;
+    /* tarpas apacioje */
+    margin-top: 10px;
+
+}
+
+/* Tekstas gauna "flexbox" elgseną ir užima likusį vietą ("flex: 1"). Pridedamas 20px tarpas dešinėje. */
+.text {
+    flex: 1;
+    /*elementas užims likusį vietą flex konteineryje (pvz., tarp kitų elementų). Jei konteineryje yra daugiau elementų su flex reikšmėmis, vieta paskirstoma pagal jų proporcijas */
+    padding-right: 20px;
+}
+
+/* Stiliaus nuotrauka gauna 20px tarpo kairėje ir sujungiamąsias lentelės kraštines. */
+.style-image {
+    margin-left: 20px;
+    border-collapse: collapse;
+}
+
+/* navigacijos meniu */
+nav ul {
+    list-style: none;
+    /* Pašalinami sąrašo ženkleliai */
+    display: flex;
+    /* "flexbox" išdėstymas, leidžiantis elementus lengvai centruoti */
+    justify-content: center;
+    /* elementai centruojami horizontaliai */
+    padding: 0;
+    /* Panaikinami vidiniai tarpai */
+    margin-top: 20px;
+    /* 20px tarpas nuo viršaus */
+}
+
+nav ul a {
+    /* nuorodos */
+    color: #d4cedd;
+    text-decoration: none;
+    /* Pašalinamas tekstų pabraukimas */
+    padding: 10px 20px;
+    /* 10px vertikalūs ir 20px horizontalūs vidiniai tarpai */
+    margin: 0 15px;
+    /* Horizontalūs tarpai (kairėje ir dešinėje) */
+    padding: 10px;
+    /* Vidiniai tarpai aplink tekstą */
+    font-size: 1.1em;
+    /* siek tiek didesnis sriftas */
+}
+
+nav ul a:hover {
+    background-color: #444;
+    /* Kai pele užvedama ant nuorodos, fono spalva keičiasi į tamsiai pilką */
+    border-radius: 5px;
+    /*Kampai suapvalinami */
+}
+
+aside {
+    flex: 1;
+    width: 25%;
+    /* Užima 25% plocio */
+    padding: 20px;
+    /* Vidiniai tarpai aplink turinį */
+    background-color: #ffffffce;
+    border-radius: 8px;
+    /* Apvalinti kampai */
+}
+
+aside h2 {
+    font-size: 1.8em;
+    /* siek tiek mazesnis sriftas */
+    margin-bottom: 20px;
+    /* Tarpas apacioje */
+    color: #333;
+}
+
+aside ul {
+    list-style-type: none;
+    /* bullets pasalinti */
+    font-size: 16px;
+    /* srifto dydis */
+    text-align: left;
+}
+
+aside img {
+    width: 100%;
+    /* Uzima visa ploti */
+    height: auto;
+    border-radius: 8px;
+    /* Apvalinti kampai */
+    margin-bottom: 20px;
+    /* tarpas apacioje */
+    margin-top: 20px;
+    /* tarpas virsuje */
+}
+
+aside p.date {
+    text-align: right;
+    /* tekstas lygiuojamas desineje */
+    font-size: 12px;
+    color: #999;
+}
+
+aside p.salsa {
+    margin-bottom: 20px;
+    /* tarpas apacioje */
+    text-align: left;
+    /* lygiavimas i kaire */
+}
+
+
+/* Pagrindinė sekcija užima 75% pločio, turi 15px vidinį tarpą ir šviesiai violetinį foną */
+section {
+    width: 75%;
+    padding: 15px;
+    background-color: #c9b9de;
+}
+
+/* Puslapio apačia turi tą pačią fono spalvą kaip ir header, tekstas baltas, 
+   centravimas horizontalioje ašyje, 10px viršaus ir apačios tarpai */
+footer {
+    background-color: #5f4c79;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+}
+
+/* Pagrindinė antraštė užima visą turimą vietą ("flex: 1"), tekstas centruojamas, pašalinami numatytieji kraštai. */
+h1 {
+    flex: 1;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-size: 2em;
+    color: #5f4c79;
+    text-align: center;
+    margin-bottom: 15px;
+    /* 15px tarpas apačioje */
+}
+
+h3,
+h4 {
+    margin-bottom: 15px;
+}
+
+/* Galerija - lentele */
+.gallery-table {
+    width: 100%;
+    /* plotis 100% */
+    border-collapse: collapse;
+    /* pašalina tarpus tarp lentelės sienelių */
+    margin-bottom: 30px;
+    /* Pridedamas 30px tarpas apačioje */
+}
+
+.gallery-table td {
+    padding: 10px;
+    /* 10px vidiniai tarpai */
+}
+
+.gallery-table img {
+    width: 100%;
+    /* Užima visą lentelės langelio plotį */
+    height: auto;
+    /* Islaiko proporcijas */
+    border-radius: 8px;
+    /* Apvalinti kampai */
+}
+
+.video-table {
+    width: 100%;
+    /* Užima visą lentelės langelio plotį */
+    border-collapse: collapse;
+    /* Lentelės sienelės sujungtos */
+}
+
+.video-table td {
+    padding: 10px;
+    /* 10px vidiniai tarpai */
+    text-align: center;
+    /* Tekstas ir elementai centruojami horizontaliai */
+}
+
+/* ikelti vaizdo irasai */
+.video-table iframe {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    /* Apvalinti kampai */
+}
+
+
+section#gallery {
+    padding: 20px;
+    /* Vidiniai tarpai aplink sekcijos turinį */
+    background-color: #f1e9f4;
+}
+
+section#gallery hr {
+    margin: 30px 0;
+    /* Pridėti 30px viršutiniai ir apatiniai tarpai */
+    border-color: #5f4c79;
+}
+
+section#gallery h2 {
+    color: #5f4c79;
+    text-align: center;
+    margin-bottom: 30px;
+    /* Pridedamas 30px tarpas apačioje */
+}
+
+/* * - universalus selektorius, kuris taikomas visiems HTML elementams puslapyje, 
+nepriklausomai nuo jų tipo (pvz., <div>, <h1>, <p>, <img>, ir t.t.).
+Šiame kontekste universalus stilius dažniausiai naudojamas kaip „reset“ stilius, 
+siekiant užtikrinti nuoseklų visų elementų išdėstymą ir elgesį. */
+* {
+    margin: 0;
+    /* panaikinami krastai */
+    padding: 0;
+    /* panaikinami tarpai */
+    box-sizing: border-box;
+    /* elementų dydis (plotis/aukštis)
+    apimtų ir vidinius tarpus bei rėmelius. Tai padeda lengviau valdyti išdėstymą. */
+}
+
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    /* leidžia vaikų elementams perkelti į kitą eilutę, jei nepakanka vietos. */
+    padding: 30px;
+    /* Vidiniai tarpai aplink turinį */
+}
+
+section#trainers {
+    flex: 2;
+    /* Užima dvigubai daugiau vietos lyginant su kitais flex elementais */
+    margin-right: 20px;
+    /* Tarpas dešinėje  */
+}
+
+.trainer {
+    background-color: #fff;
+    padding: 20px;
+    /*vidiniai tarpai */
+    margin-bottom: 20px;
+    /* tarpas po elementu */
+    border-radius: 8px;
+    /* apvalinti kampai */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    /* Vidiniai elementai išdėstomi horizontalioje eilėje */
+    align-items: center;
+    gap: 20px;
+    /* tarpas tarp elementu */
+}
+
+.trainer img {
+    border-radius: 50%;
+    /* Apvalinama iki apskritimo formos */
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    /* nuotrauka bus apkirpta taip, kad atitiktų apskritimo formą be iškraipymo */
+}
+
+.trainer p {
+    color: #555;
+}
+
+.map iframe {
+    width: 100%;
+    /* Nuolatinis plotis užimant visą tėvinio elemento plotį */
+    height: 450px;
+    /* Nustatytas standartinis aukštis */
+    border: 0;
+    /* Pašalina rėmelį aplink žemėlapį */
+}
+
+section#registration {
+    background-color: #fff;
+    padding: 30px;
+    /* Prideda vidinius tarpus aplink visą sekcijos turinį */
+    border-radius: 8px;
+    /* Apvalina kampus */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* seselis */
+    max-width: 600px;
+    /* Ribojamas sekcijos maksimalus plotis iki 600 pikselių */
+    margin: 0 auto;
+    /* Centruoja sekciją horizontaliai. */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    /*  elementai išdėstomi stulpeliu */
+}
+
+.form-group {
+    margin-bottom: 20px;
+    /* Pridedamas tarpas po kiekvienos formos grupės */
+}
+
+label {
+    margin-bottom: 5px;
+    /* tarpas po etiketes */
+    color: #555;
+}
+
+input,
+select {
+    padding: 10px;
+    /* Vidiniai tarpai aplink tekstą ar pasirinkimą */
+    font-size: 1em;
+    border: 1px solid #ccc;
+    /* Pilkas rėmelis aplink įvesties laukelį */
+    border-radius: 5px;
+    /* Apvalinti kampai */
+    width: 100%;
+    box-sizing: border-box;
+    /* rėmeliai ir vidiniai tarpai yra įtraukti į elemento plotį */
+}
+
+/* turetu panaikinti numerio laukelio rodykles */
+input[type="number"] {
+    -moz-appearance: textfield;
+    /* Firefox */
+    -webkit-appearance: none;
+    /* Chrome, Safari, Edge */
+    appearance: none;
+    /* Standard property */
+}
+
+input:focus,
+select:focus {
+    border-color: #5f4c79;
+    /* rėmelio spalva tampa violetinė kai jis yra pasirinktas */
+    outline: none;
+    /* pasalina browserio defaultini remelio spalva */
+}
+
+.submit-btn {
+    background-color: #5f4c79 !important;
+    /* Ši savybė turi aukštesnį prioritetą, ir jei ji pašalinama, spalva pasikeis */
+    color: white;
+    padding: 12px;
+    /* Vidiniai tarpai aplink tekstą */
+    font-size: 1.1em;
+    border: none;
+    /* be remelio */
+    border-radius: 5px;
+    /* Apvalinti kampai */
+    cursor: pointer;
+    /* Užvedus pelės žymeklį, jis tampa rodykle */
+    transition: background-color 0.3s;
+    /* Sklandus perėjimas keičiant fono spalvą */
+    margin-top: 20px;
+}
+
+.submit-btn:hover {
+    background-color: #4a3c63;
+    /* Užvedus pelės žymeklį, fono spalva tamsėja */
+}
+
+.modal {
+    display: none;
+    /* pasleptas */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /*Pusiau permatomas tamsus fonas */
+    display: flex;
+    /* centruoja modalini langa */
+    justify-content: center;
+    /* turi buti centruojamas vertikaliai */
+    align-items: center;
+    /* turi buti centruojamas horizontaliai */
+    z-index: 1000;
+    /* Užtikrinama, kad modalinis langas būtų virš visų kitų elementų */
+}
+
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    /* Vidiniai tarpai aplink turinį */
+    border-radius: 8px;
+    /* Apvalinti kampai */
+    text-align: center;
+    max-width: 400px;
+    /* ribojamas plotis */
+    width: 100%;
+}
+
+.modal h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+/* mygtukas */
+#close-modal {
+    background-color: #f44336;
+    color: white;
+    padding: 12px;
+    /* Vidiniai tarpai aplink tekstą */
+    font-size: 1.1em;
+    border: none;
+    border-radius: 5px;
+    /* apvalinti kampai */
+    cursor: pointer;
+    /* Užvedus pelės žymeklį, jis tampa rodykle */
+}
+
+#close-modal:hover {
+    background-color: #d32f2f;
+    /* Užvedus pelės žymeklį, fono spalva tampa tamsesnė raudona */
+}
+
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+        /* Sumažinamas antraštės tekstas */
+    }
+
+    .header-container {
+        flex-direction: column;
+        /* Elementai išdėstomi stulpeliu */
+        text-align: center;
+        /* Centruotas tekstas */
+    }
+
+    nav ul {
+        flex-direction: column;
+        /* Navigacijos elementai išdėstomi vertikaliai */
+        gap: 10px;
+        /* Tarpas tarp navigacijos elementų */
+    }
+
+    nav ul a {
+        margin: 5px 0;
+        /* Tarpas tarp nuorodų */
+        padding: 8px 12px;
+        /* Vidiniai tarpai mažesniam ekranui */
+        font-size: 1em;
+        /* Sumažintas šrifto dydis */
+    }
+
+    main {
+        flex-direction: column;
+        /* Sekcijos išdėstomos stulpeliu */
+    }
+
+    section#trainers {
+        margin-right: 0;
+        /* Tarpas dešinėje pašalinamas mažiems ekranams */
+    }
+
+    .trainer img {
+        border-radius: 50%;
+        /* Apvalinama iki apskritimo formos */
+        width: 50%;
+        /* Nuotrauka užims 50% tėvinio konteinerio pločio */
+        height: auto;
+        /* Aukštis automatiškai pritaikomas, kad išlaikytų proporcijas */
+        max-width: 200px;
+        /* Maksimalus plotis yra 200px, kad nuotraukos neperžengtų šio dydžio */
+        object-fit: cover;
+        /* Nuotrauka bus apkirpta taip, kad atitiktų apskritimo formą be iškraipymo */
+    }
+
+    section#registration {
+        padding: 20px;
+        /* Erdvė nuo sekcijos kraštų */
+    }
+
+    .submit-btn {
+        padding: 10px;
+        /* Sumažėja mygtuko dydis */
+        font-size: 1em;
+    }
+
+    section {
+        width: 100%;
+        /* Sekcija užima visą plotį */
+        margin-bottom: 20px;
+        /* Tarpas tarp sekcijų */
+    }
+
+    aside {
+        order: 1;
+        /* Užtikrinama, kad aside bus po pagrindiniu turiniu (-1 pries turini) */
+        width: 100%;
+        /* Užima visą turimą plotį */
+        margin: 0 auto;
+        /* Centruojama */
+        padding: 15px;
+        /* Papildomas tarpas */
+    }
+}
+
+
+@media (max-width: 564px) {
+
+    .logo {
+        margin-right: 0;
+        /* Nuimamas tarpas dešinėje */
+        margin-bottom: 10px;
+        /* Tarpas po logotipu */
+    }
+
+    /* Galerijai (nuotraukoms) nustatome, kad būtų dvi nuotraukos eilėje */
+    .gallery-table {
+        display: flex;
+        flex-wrap: wrap;
+        /* Leidžia elementams perkelti į kitą eilutę */
+    }
+
+    .gallery-table td {
+        width: 50%;
+        /* Kiekvienas langelis užims pusę eilutės */
+        box-sizing: border-box;
+        /* Užtikrina, kad padding neįtakotų bendro pločio */
+    }
+
+    /* Vaizdo įrašams taikome tą patį principą */
+    .video-table {
+        display: flex;
+        flex-wrap: wrap;
+        /* Leidžia elementams perkelti į kitą eilutę */
+    }
+
+    .video-table td {
+        width: 50%;
+        /* Kiekvienas langelis užims pusę eilutės */
+        box-sizing: border-box;
+    }
+
+    .dance-styles-table tr {
+        display: flex;
+        /* Leidžia keisti turinio išdėstymą */
+        flex-direction: column;
+        /* Stulpelius išdėlioja vertikaliai */
+        margin-bottom: 20px;
+        /* Tarpas tarp eilučių */
+    }
+
+    .dance-styles-table td {
+        width: 100%;
+        /* Tekstas ir nuotrauka užima pilną plotį */
+        text-align: left;
+        /* Lygiuoja tekstą į kairę */
+    }
+
+    .dance-styles-table td img {
+        margin-top: 10px;
+        /* Nedidelis tarpas virš nuotraukos */
+        width: 100%;
+        /* Nuotrauka užima pilną plotį */
+        height: auto;
+        /* Išlaiko proporcijas */
+    }
+
+    .trainer {
+        flex-direction: column;
+        /* Elementai išdėstomi vertikaliai */
+        text-align: center;
+        /* Tekstas centruojamas */
+        gap: 10px;
+        /* Sumažintas tarpas tarp elementų */
+    }
+
+    .trainer img {
+        width: 150px;
+        /* Mažesnis nuotraukos dydis */
+        height: 150px;
+        /* Atitinkamai mažinamas aukštis */
+        margin-bottom: 10px;
+        /* Tarpas po nuotrauka */
+    }
+
+    .trainer h3 {
+        margin-bottom: 5px;
+        /* Mažesnis tarpas po antrašte */
+        font-size: 1.2em;
+        /* Šrifto dydis sumažintas */
+    }
+
+    .trainer p {
+        font-size: 0.9em;
+        /* Šrifto dydis sumažintas tekstui */
+    }
+}
+
+
+@media (max-width: 360px) {
+
+    .header-container {
+        align-items: center;
+        /* Centruojami elementai horizontaliai */
+    }
+
+    header h1 {
+        font-size: 1.2em;
+        /* Mažesnis šrifto dydis */
+        margin: 0;
+        /* Nuimami nereikalingi tarpai */
+        padding: 5px 0;
+        /* Pridedami gražūs tarpai viršuje ir apačioje */
+        line-height: 1.4;
+        /* Geresnis tarpas tarp teksto eilučių */
+    }
+
+
+    .gallery-table,
+    .video-table {
+        display: flex;
+        /* Naudojame flexbox maketą */
+        flex-direction: column;
+        /* Elementai išdėstomi vienas po kito vertikaliai */
+        align-items: center;
+        /* Centruojame elementus horizontaliai */
+        gap: 20px;
+        /* Pridedame tarpą tarp kiekvieno elemento */
+    }
+
+    .gallery-table td,
+    .video-table td {
+        display: flex;
+        /* Užtikriname, kad kiekvienas langelis elgtųsi kaip flex konteineris */
+        flex-direction: column;
+        /* Turinys išdėstomas vertikaliai */
+        width: 100%;
+        /* Užima visą galimą plotį */
+    }
+
+    .gallery-table img,
+    .video-table iframe {
+        width: 100%;
+        /* Nuotraukos ir vaizdo įrašai pritaikomi pagal plotį */
+        height: auto;
+        /* Išlaikomas originalus aukščio ir pločio santykis */
+    }
+
+    .map iframe {
+        width: 100%;
+        /* Užima 100% ekrano plotį */
+        height: 250px;
+        /* Mažesnis aukštis mažiems ekranams */
+    }
+
+}
+
+/* Centruoti tagų konteinerį */
+.tags {
+    display: flex;
+    /* Naudojame flexbox, kad lengviau būtų lygiuoti */
+    justify-content: center;
+    /* Horizontali centrinė lygiuotė */
+    gap: 10px;
+    /* Tarpas tarp tagų */
+    margin-bottom: 10px;
+}
+
+.tag {
+    background-color: #e4dcf3;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+
+.video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+p {
+    margin-bottom: 20px;
+    /* Tarpas tarp pastraipų */
+}
+
+hr {
+    margin: 20px 0;
+    /* 20px tarpas viršuje ir apačioje */
+}
+
+footer a {
+    color: #d8b6ff;
+    /* Šviesiai violetinė spalva */
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+footer a:hover {
+    color: white;
+    /* Pasikeis į baltą užvedus pelę */
+}
+
+/* Main Content */
+main {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+section h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+section ul li {
+    margin-bottom: 10px;
+}
+
+section ul li strong {
+    font-weight: bold;
+}

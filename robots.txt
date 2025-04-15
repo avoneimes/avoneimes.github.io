@@ -1,0 +1,8 @@
+// nurodo paieskos sistemoms pvz Google, kurias svetaines dalis 
+galima ar negalima indeksuoti (pvz nerodyti kazkokio puslapio paieskoje)
+
+User-agent: *
+Disallow: /registration.html
+Allow: /
+
+Sitemap: https://moveit.lt/sitemap.xml

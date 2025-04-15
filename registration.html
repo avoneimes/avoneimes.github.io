@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="lt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOVE IT - Registracija</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <img src="https://files.axshare.com/gsc/JRFFS1/cd/73/e3/cd73e340df43415abdae4e0bdf42ae86/images/pagrindinis_puslapis/u6.png?pageId=0d1c6a1c-dd1a-4a2d-80c2-595b969ef0c6"
+                alt="Logo" class="logo" width="70" height="70">
+            <h1>ŠOKIŲ STUDIJA MOVE IT</h1>
+        </div>
+        <nav>
+            <hr>
+            <ul>
+                <a href="index.html">Pagrindinis</a>
+                <a href="trainers.html">Šokių treneriai</a>
+                <a href="gallery.html">Galerija</a>
+                <a href="contacts.html">Kontaktai</a>
+                <a href="#registration">Registracija</a>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="registration">
+            <h2>Registracija</h2>
+            <hr>
+            <br>
+
+            <form id="registration-form">
+                <div class="form-group">
+                    <label for="name">Vardas:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="surname">Pavardė:</label>
+                    <input type="text" id="surname" name="surname" required>
+                </div>
+                <div class="form-group">
+                    <label for="age">Amžius:</label>
+                    <input type="number" id="age" name="age" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Gyvenamoji vieta:</label>
+                    <input type="text" id="address" name="address" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Telefono numeris:</label>
+                    <input type="number" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">El. paštas:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="style">Šokių stilius:</label>
+                    <select id="style" name="style" required>
+                        <option value="">Pasirinkite šokių stilių</option>
+                        <option value="hiphop">HipHop</option>
+                        <option value="jazz">Jazz</option>
+                        <option value="vogue">Vogue</option>
+                        <option value="salsa">Salsa</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-btn">Pateikti formą</button>
+            </form>
+
+            <div class="modal" id="success-modal" style="display: none;">
+                <div class="modal-content">
+                    <h2>Jūsų registracija sėkmingai pateikta!</h2>
+                    <button class="submit-btn" style="background-color: #f44336;" id="close-modal">Uždaryti</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 MOVE IT.</p>
+    </footer>
+
+    <script>
+        const form = document.getElementById('registration-form'); // Paieška pagal ID, kad gautumėte registracijos formą
+        const modal = document.getElementById('success-modal'); // Paieška pagal ID, kad gautumėte modalinį langą, kuris bus rodomas, kai registracija bus sėkminga
+        const closeModalBtn = document.getElementById('close-modal'); // Paieška pagal ID, kad gautumėte mygtuką, kuris uždarys modalinį langą
+
+        form.addEventListener('submit', function (event) { // Užregistruojame klausytuvą (listener), kuris reaguos į formos pateikimo įvykį
+            event.preventDefault(); // Užkirsti kelią numatytam formos pateikimo veiksmui (pvz., puslapio perkrovimui)
+
+            // Rodome sėkmės modalinį langą
+            modal.style.display = 'block'; // Nustatome modalinio lango stilių, kad jis būtų rodomas. "block" reiškia, kad elementas bus matomas, nes jis yra paslėptas pagal nutylėjimą
+        });
+
+        // Uždaryti modalinį langą paspaudus uždarymo mygtuką
+        closeModalBtn.addEventListener('click', function () { // Užregistruojame klausytuvą, kuris reaguos į uždarymo mygtuko paspaudimą
+            modal.style.display = 'none'; // Nustatome modalinio lango stilių į "none", kad jis būtų paslėptas - uždaromas
+        });
+    </script>
+</body>
+
+</html>

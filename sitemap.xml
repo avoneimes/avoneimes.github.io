@@ -1,0 +1,14 @@
+<!--XML sitemap skirtas paieskos sistemoms, pvz Google,
+jis padeda suprasti, kokie puslapiai egzistuoja svetaineje-->
+
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://moveit.lt/index.html</loc></url>
+  <url><loc>https://moveit.lt/about.html</loc></url>
+  <url><loc>https://moveit.lt/contacts.html</loc></url>
+  <url><loc>https://moveit.lt/gallery.html</loc></url>
+  <url><loc>https://moveit.lt/registration.html</loc></url>
+  <url><loc>https://moveit.lt/trainer.html</loc></url>
+  <url><loc>https://moveit.lt/faq.html</loc></url>
+</urlset>
+
